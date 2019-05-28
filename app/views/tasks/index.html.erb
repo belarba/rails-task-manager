@@ -6,6 +6,7 @@
     <% else %>
       <input type="checkbox"> <%= link_to task.title, task_path(task) %>
     <% end %>
-
+    <%= link_to 'Delete', destroy_path(task), data: {:confirm => "Delete #{task.title} ?"}, :method => :delete %>
   </li>
 <% end %>
+<p><%= link_to 'Add new', tasks_new_path %></p>
